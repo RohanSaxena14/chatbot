@@ -1,0 +1,28 @@
+{% load static %}
+
+<html>
+  <head>
+    <style>
+        p {
+          color: navy;
+          text-indent: 30px;
+          text-transform: uppercase;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s01">
+        
+        <h1 style="color: black;">{{ question }}</h1>
+        
+        <p style="color: grey;"> {{ answer }} </p>
+        
+    </div>
+  </body>
+</html>
