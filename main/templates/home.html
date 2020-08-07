@@ -7,7 +7,7 @@
 </head>
 <body onload="javascript:printSomething()">
   <div class="container clearfix" >
-    <div class="chat" id = "chat">
+    <div class="chat" >
       <div class="chat-header clearfix">
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
         
@@ -17,7 +17,7 @@
         <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
       
-      <div class="chat-history">
+      <div class="chat-history" id = "chat_ka_container">
         {% if not start %}
           {% for query in queries %}
             <ul>
@@ -70,13 +70,17 @@
 <script src="{% static 'js/main.js' %}"></script>
 <script>
 
-  setTimeout(printSomething, 1000);
+  setTimeout(printSomething, 10);
 
   function printSomething(){
       window.scrollTo(0,document.body.scrollHeight);
   }
 </script>
-
+<script>
+window.onload=function () {
+  var objDiv = document.getElementById("chat_ka_container");
+  objDiv.scrollTop = objDiv.scrollHeight;
+}
 </script>
 </body>
 </html>
