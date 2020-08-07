@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+</style>
+</head>
+<body bgcolor="pink" onload="javascript:printSomething()">
+
+<h2>Chatbot</h2>
+
+<table>
+    <tr>
+        <th>BOT</th>
+        <th>YOU</th>
+    {% for query in queries %}
+    <tr>
+        <td>
+        </td>
+        <td>
+            {{query.question}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{query.answer}}
+        </td>
+        <td>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td>
+            <form action = 'answer'>
+                <input id="search" type="text" placeholder="What are you looking for?" name = "question" />
+                <button class="btn-search" type="submit">Ask</button>
+            </form>
+        </td>   
+    </tr>
+</table>
+
+
+<script>
+
+    setTimeout(printSomething, 1000);
+
+    function printSomething(){
+        window.scrollTo(0,document.body.scrollHeight);
+    }
+</script>
+
+</body>
+</html>
